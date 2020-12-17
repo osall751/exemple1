@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="!bool">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Vérfier les paramétres sasies !!!</strong>
+    </div>
+
+
+    <div class="card col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin: auto; padding: 10x; font-size: xx-large; 
+        background-color: rgb(221, 221, 217);"><br>
+
+        <img [src]="img" class="img-responsive" alt="Image" style="margin: auto;" />
+        <hr>
+
+        <input type="email" name="" id="input" class="form-control" [(ngModel)]="login" required="required" title=""
+            placeholder="Email ?"><br>
+        <input type="password" name="" id="input" class="form-control" [(ngModel)]="mdp" required="required" title=""
+            placeholder="Password ?"><br>
+        <button type="button" (click)="seConnecter()" class="btn btn-danger" style="width: 100%;">Se
+            Connecter</button><br>
+    </div>
+    <!-- <h2 [hidden]="login.length ==0 || mdp.length ==0">
+        Le login saisie est {{login}} et le mot de passe saisie est {{mdp}}
+    </h2> -->
+    <ng-container *ngIf="login.length ==0 || mdp.length ==0; else elseTemplate">
+        <strong>Login ou le mot de passe ne peuvent être vides !!!</strong>
+    </ng-container>
+    <ng-template #elseTemplate>
+        Le login saisie est {{login}} et le mot de passe saisie est {{mdp}}
+    </ng-template>
+    
+
+</div>

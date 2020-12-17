@@ -1,0 +1,17 @@
+<header>
+    <div class="navbar">
+        <a class="navbar-brand" href="#">Accueil</a>
+        <ul class="nav">
+            <!-- <li class="active">
+                <a href="#">Se Connecter</a>
+            </li> -->
+            <!-- &nbsp;&nbsp;&nbsp; -->
+            <li [hidden]="!gestionSession.isConnect()">
+                <button type="button" class="btn btn-default" (click)="seDeconnecter()">
+                    Se Déconnecter
+                </button>
+            </li>
+        </ul>
+    </div>
+
+</header>
