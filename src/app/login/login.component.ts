@@ -43,6 +43,9 @@ export class LoginComponent implements OnInit {
     return this.loginFormGroup.get("mdpCtrl");
   }
   seConnecter() {
+    this.login=this.loginFormGroup.value.loginCtrl;
+    this.mdp=this.loginFormGroup.value.mdpCtrl;
+    
     if (this.mdp === 'passer123') {
       sessionStorage.setItem('username', this.login);
       this.router.navigate(['accueil']);
